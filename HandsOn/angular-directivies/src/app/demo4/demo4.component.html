@@ -1,8 +1,11 @@
+<div style="background-color:red">
+    This is Ngstyle Demo
+</div>
 <div [ngStyle]="{'background-color':'red'}">
     This is Ngstyle Demo
 </div>
 <!-- conditional styling -->
-<div [ngStyle]="{'color':flag?'red':'green'}">
+<div [ngStyle]="{'color':flag?'green':'red'}">
     This is Ngstyle Demo
 </div>
 <button on-click='Set()'>Set</button>
@@ -17,7 +20,7 @@
         <p [ngStyle]="{'color': scolor}">
             ngStyle supports dynamic styling
         </p>
-        <p [ngStyle]="{'background-color': scolor}">
+        <p [ngStyle]="{'background-color': scolor,'color':'white'}">
             ngStyle supports dynamic styling
         </p>
     </div>
