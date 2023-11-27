@@ -1,0 +1,43 @@
+<div class="container">
+  <pre>
+  Title:{{title|uppercase}}
+  OrderDate:{{orderDate|date}}
+  OrderDate in MM/DD/YYYY:{{orderDate|date:'MM/dd/YYYY'}}
+  OrderDate in DD/MM/YYYY:{{orderDate|date:'dd/MM/YYYY'}}
+  Salary in dollers:{{salary|currency}}
+  Salary in rupees:{{salary|currency:'INR'}}
+  Salary in pounds:{{salary|currency:'EUR'}}
+  Product Name:{{productName|lowercase}}
+  Stock:{{stock}}
+  Stock:{{stock|number:'.3'}}
+  token:{{token|number:'3.0'}}
+  price:{{price|number:'.2'}}
+  avg:{{avg_marks|percent}}
+  Product Name:{{productName|slice:0:6}}
+  Product Name:{{productName|slice:10:17}}
+ </pre>
+  <hr>
+  {{products}}<br>
+  {{products|json}}
+  <hr>
+  <table class="table" border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products">
+        <td>{{item.id|number:'3.'}}</td>
+        <td>{{item.name|uppercase}}</td>
+        <td>{{item.price|currency:'INR'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  {{'Sachin'|greet:'Hello'}}<br>
+  {{'Rahul'|greet:'Good Mornig'}}<br>
+  {{'Vinod'|greet}}<br>
+</div>
