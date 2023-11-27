@@ -1,0 +1,36 @@
+<div>
+    <h2>Employee Details</h2>
+    <div *ngFor="let obj of employees">
+        <pre>
+        Id:{{obj.id}}
+        Name:{{obj.name}}
+        Email:{{obj.email}}
+        Mobile:{{obj.mobile}}
+        Designation:{{obj.designation}}
+        JonDate:{{obj.joinDate}}
+        Salary:{{obj.salary}}
+        </pre>
+        <hr>
+    </div>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>JoinDate</th>
+            <th>Designation</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor="let e of employees">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.mobile}}</td>
+            <td>{{e.joinDate}}</td>
+            <td>{{e.designation}}</td>
+            <td>{{e.salary}}</td>
+        </tr>
+    </table>
+</div>

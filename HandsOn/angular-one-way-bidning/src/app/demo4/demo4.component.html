@@ -1,0 +1,22 @@
+<div>
+    <h3>{{city}}</h3>
+    <ol>
+        <li *ngFor="let item of cities">
+            {{item}}
+        </li>
+    </ol>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>City</th>
+        </tr>
+        <tr *ngFor="let item of cities">
+            <td>{{item}}</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>Veena Maraks</h3>
+    <ul>
+        <li *ngFor="let m of marks">{{m}}</li>
+    </ul>
+</div>

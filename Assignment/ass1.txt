@@ -1,0 +1,11 @@
+1. Create new angular app
+2. Create following components
+  login
+  register
+  home
+  about
+  contact
+  services
+ 3. apply routing for all the components
+ Note: all components are renderd dynamically as per the requested path
+ add couple of lines of html code in each component view

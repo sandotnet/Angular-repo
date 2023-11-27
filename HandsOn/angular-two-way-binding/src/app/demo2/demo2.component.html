@@ -1,0 +1,28 @@
+<div>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" [(ngModel)]="item.pid">
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" [(ngModel)]="item.pname">
+            </td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>
+                <input type="number" [(ngModel)]="item.price">
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <pre>
+        Id:{{item.pid}}
+        Name:{{item.pname}}
+        Price:{{item.price}}
+    </pre>
+</div>

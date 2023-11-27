@@ -1,0 +1,11 @@
+create a new component
+define the details of employee in the component class and bind to view
+======================================
+create a new model-class(movieId,movieName,language,releaseDate,actor,co-actors,director)
+create a component view componnent and intiate movie datains and bind to the template(component-view)
+create a new component all-movies and defind array of movies and bind the movies to  view template
+
+1. Create new angular app
+2. Create Book model
+3. Cratea  component and initate book object
+4. bind book object details from the view template and disaply book details

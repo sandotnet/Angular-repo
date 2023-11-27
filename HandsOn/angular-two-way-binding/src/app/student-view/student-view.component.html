@@ -1,0 +1,68 @@
+<div class="container">
+    <table>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" [(ngModel)]="student.name">
+                </td>
+            </tr>
+            <tr>
+                <td>Dob</td>
+                <td>
+                    <input type="date" [(ngModel)]="student.dob">
+                </td>
+            </tr>
+            <tr>
+                <td>School</td>
+                <td>
+                    <input type="text" [(ngModel)]="student.school">
+                </td>
+            </tr>
+            <tr>
+                <td>Std</td>
+                <td>
+                    <select [(ngModel)]="student.std">
+                        <option *ngFor="let item of stds">{{item}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Are U Suscribing <input type="checkbox" [(ngModel)]="student.IsSubscribed">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button (click)="AddStudent()">Register</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Dob</th>
+                <th>School</th>
+                <th>Std</th>
+                <th>Subscribed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of students">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.dob}}</td>
+                <td>{{item.school}}</td>
+                <td>{{item.std}}</td>
+                <td>
+                    <input type="checkbox" [(ngModel)]="item.IsSubscribed">
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
