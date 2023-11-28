@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>Enter Prouct Name</td>
+            <td>
+                <input type="text" [(ngModel)]="product_name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr *ngIf="isAvailable">
+            <td colspan="3">
+                <pre>
+                Id:{{product.id}}
+                name:{{product.name}}
+                price:{{product.price}}
+                stock:{{product.stock}}
+            </pre>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span class="text-warning">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+</div>
