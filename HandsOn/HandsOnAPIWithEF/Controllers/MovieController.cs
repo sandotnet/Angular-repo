@@ -32,14 +32,11 @@ namespace HandsOnAPIWithEF.Controllers
             try
             {
                 Movie movie = _movieRepository.Get(id);
-                if (movie != null)
-                {
+               
+                
                     return StatusCode(200, movie);
-                }
-                else
-                {
-                    return StatusCode(404, "Invalid Id");
-                }
+                
+                
             }
             catch (System.Exception ex)
             {

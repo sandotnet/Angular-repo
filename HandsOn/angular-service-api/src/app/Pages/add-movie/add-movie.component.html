@@ -1,0 +1,45 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" [(ngModel)]="movie.title">
+            </td>
+        </tr>
+        <tr>
+            <td>year</td>
+            <td>
+                <input type="number" [(ngModel)]="movie.releaseYear">
+            </td>
+        </tr>
+        <tr>
+            <td>Language</td>
+            <td>
+                <select [(ngModel)]="movie.language">
+                    <option>Telugu</option>
+                    <option>Tamil</option>
+                    <option>Kanada</option>
+                    <option>Hindi</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Actor</td>
+            <td>
+                <input type="text" [(ngModel)]="movie.actor">
+            </td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>
+                <input type="text" [(ngModel)]="movie.director">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="addMovie()">Add</button>
+            </td>
+        </tr>
+
+    </table>
+</div>

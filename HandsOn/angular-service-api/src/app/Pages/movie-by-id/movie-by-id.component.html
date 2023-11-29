@@ -1,0 +1,71 @@
+<div class="container">
+    <table class="table" style="width: 500px;">
+        <tr>
+            <td>
+                <label>MovieId</label>
+            </td>
+            <td>
+                <input type="number" [(ngModel)]="movieId" class="form-control">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span style="color: red;">{{errMsg}}</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table class="table" *ngIf="isMovieExist">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input type="number" [(ngModel)]="movie.movieId" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" [(ngModel)]="movie.title" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>year</td>
+            <td>
+                <input type="number" [(ngModel)]="movie.releaseYear" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Language</td>
+            <td>
+                <select [(ngModel)]="movie.language" class="form-control">
+                    <option>Telugu</option>
+                    <option>Tamil</option>
+                    <option>Kanada</option>
+                    <option>Hindi</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Actor</td>
+            <td>
+                <input type="text" [(ngModel)]="movie.actor" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>
+                <input type="text" [(ngModel)]="movie.director" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+                <button class="btn btn-primary" (click)="delete()">Delete</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
