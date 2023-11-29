@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Movie } from '../../Models/movie';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-getallmovies',
   standalone: true,
@@ -12,7 +13,7 @@ import { Movie } from '../../Models/movie';
 })
 export class GetallmoviesComponent {
   movies: Movie[] = [];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.getAllMovies();
   }
   getAllMovies() {
@@ -22,5 +23,18 @@ export class GetallmoviesComponent {
         this.movies = response;
         console.log(this.movies);
       });
+  }
+  delete(id: any) {
+    console.log(id);
+    this.http
+      .delete('http://localhost:64257/api/Movie/DeleteMovie/' + id)
+      .subscribe((response) => {
+        console.log(response);
+      });
+    this.getAllMovies(); //to load the table
+    location.reload(); //to reload the page
+  }
+  getId(id: any) {
+    this.router.navigateByUrl('search/' + id);
   }
 }

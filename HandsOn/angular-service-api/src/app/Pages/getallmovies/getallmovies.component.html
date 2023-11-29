@@ -1,5 +1,5 @@
 <div class="container">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-responsive">
         <thead>
             <tr>
                 <th>ID</th>
@@ -8,6 +8,7 @@
                 <th>Language</th>
                 <th>Actor</th>
                 <th>Director</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,11 @@
                 <td>{{movie.language}}</td>
                 <td>{{movie.actor}}</td>
                 <td>{{movie.director}}</td>
+                <td>
+                    <button class="btn btn-info" (click)="getId(movie.movieId)">Edit</button> &nbsp;
+                    <button class="btn btn-primary" (click)="delete(movie.movieId)">Delete</button> &nbsp;
+                    <button class="btn btn-secondary" (click)="getId(movie.movieId)">View</button>
+                </td>
             </tr>
         </tbody>
     </table>

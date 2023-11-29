@@ -6,5 +6,5 @@ import { MovieByIdComponent } from './Pages/movie-by-id/movie-by-id.component';
 export const routes: Routes = [
   { path: 'getall', component: GetallmoviesComponent },
   { path: 'add', component: AddMovieComponent },
-  { path: 'search', component: MovieByIdComponent },
+  { path: 'search/:mid', component: MovieByIdComponent },
 ];

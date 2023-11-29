@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Movie } from '../../Models/movie';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-movie-by-id',
   standalone: true,
@@ -17,8 +17,16 @@ export class MovieByIdComponent {
   movie: Movie;
   errMsg: string = '';
   isMovieExist: boolean = false;
-  constructor(private http: HttpClient, private roter: Router) {
+  constructor(
+    private http: HttpClient,
+    private roter: Router,
+    private activateRoute: ActivatedRoute
+  ) {
     this.movie = new Movie();
+    //route parameter mid is assiged to movieId
+    this.activateRoute.params.subscribe((p) => (this.movieId = p['mid']));
+    console.log(this.movieId);
+    this.search();
   }
   search() {
     this.http
