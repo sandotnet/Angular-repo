@@ -10,14 +10,14 @@ import { User } from '../user';
   styleUrl: './template-driven-demo1.component.css',
 })
 export class TemplateDrivenDemo1Component {
-  user:User
-    constructor()
-    {
-      this.user=new User();
-    }
+  user: User;
+  constructor() {
+    this.user = new User();
+  }
 
   onSubmit(): void {
     console.log(JSON.stringify(this.user, null, 2));
+    //here invoke api endpoint using http client
   }
 
   onReset(form: NgForm): void {
