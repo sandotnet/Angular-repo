@@ -7,6 +7,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { User } from '../user';
 @Component({
   selector: 'app-reactive-demo1',
   standalone: true,
@@ -24,7 +25,10 @@ export class ReactiveDemo1Component implements OnInit {
     confirmPassword: new FormControl(''),
     acceptTerms: new FormControl(false),
   });
-  constructor(private formBuilder: FormBuilder) {}
+  user: User;
+  constructor(private formBuilder: FormBuilder) {
+    this.user = new User();
+  }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       fullname: ['', Validators.required],
@@ -60,6 +64,12 @@ export class ReactiveDemo1Component implements OnInit {
     }
 
     console.log(JSON.stringify(this.form.value, null, 2));
+    this.user.fullname = this.form.value['fullname'];
+    this.user.username = this.form.value['username'];
+    this.user.email = this.form.value['email'];
+    this.user.password = this.form.value['password'];
+
+    console.log(this.user);
   }
 
   onReset(): void {
