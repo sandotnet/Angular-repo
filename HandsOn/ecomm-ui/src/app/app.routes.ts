@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { RegisterComponent } from './Pages/register/register.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { AddProductComponent } from './Pages/add-product/add-product.component';
+import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
-  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'add-product', component: AddProductComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
 ];
