@@ -32,8 +32,9 @@ export class LoginComponent {
         if (this.httpResponse.token != null) {
           //store token in local storage
           localStorage.setItem('token', this.httpResponse.token);
+
           if (this.httpResponse.role == 'Customer') {
-            //redirect to customer dashboard
+            this.router.navigateByUrl('customer-dashboard');
           } else if (this.httpResponse.role == 'Admin') {
             this.router.navigateByUrl('admin-dashboard');
           }
