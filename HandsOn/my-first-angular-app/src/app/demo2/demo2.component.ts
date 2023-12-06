@@ -30,6 +30,10 @@ export class Demo2Component {
   multiplex: any = [];
   cid: number = 0;
   mid: number = 0;
+  constructor()
+  {
+    
+  }
   getMultiplex() {
     this.multiplex = this.items.filter((m) => m.id == this.cid);
   }
