@@ -21,7 +21,6 @@ export class Demo4Component {
   gtotal: number = 0;
   rowcount: number = 0;
   constructor() {
-    //this.getTotal();
     for (let item of this.carts) {
       this.carts1.push({
         Name: item.productName,
