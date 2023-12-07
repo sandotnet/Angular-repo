@@ -11,20 +11,36 @@ import { Cart } from '../cart';
 })
 export class Demo4Component {
   carts: Cart[] = [
-    new Cart('Mouse', 1000, 5, 10),
-    new Cart('Bottle', 1000, 15, 10),
-    new Cart('Cup', 1000, 25, 10),
-    new Cart('Book', 1000, 35, 10),
+    new Cart('Mouse', 1000, 5, 2),
+    new Cart('Bottle', 1000, 15, 2),
+    new Cart('Cup', 1000, 25, 3),
+    new Cart('Book', 1000, 35, 2),
   ];
-  qty: number = 2;
-  total: number = 0;
+  carts1: any[] = [];
+  qty: number = 0;
+  gtotal: number = 0;
+  rowcount: number = 0;
   constructor() {
     //this.getTotal();
-  }
-  getTotal():number {
-    for (let cart of this.carts) {
-      this.total += cart.tot;
+    for (let item of this.carts) {
+      this.carts1.push({
+        Name: item.productName,
+        Price: item.price,
+        Discount: item.discount,
+        DiscoutedPrice: item.price - (item.price * item.discount) / 100,
+        Qty: item.qty,
+        Total: (item.price - (item.price * item.discount) / 100) * item.qty,
+      });
     }
-    return this.total
+  }
+
+  selectQty(e: any) {
+    this.qty = e.target.value;
+  }
+  setTotal() {
+    for (let item of this.carts1) {
+      this.gtotal = this.gtotal + item.Total;
+      this.rowcount++;
+    }
   }
 }

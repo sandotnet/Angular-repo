@@ -4,9 +4,9 @@
             <th>Name</th>
             <th>Price</th>
             <th>Discount</th>
-            <th>Discounted Price</th>
             <th>Quantity</th>
-            <th>Total Price</th>
+
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -14,15 +14,45 @@
             <td>{{item.productName}}</td>
             <td>{{item.price}}</td>
             <td>{{item.discount}}</td>
-            <td>{{item.dp}}</td>
-            <td>{{item.qty}}</td>
 
-            <td>{{item.tot}}</td>
+            <!-- <td>{{item.qty}}</td> -->
+            <td>
+                <select (change)="selectQty($event)">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </td>
+            <td><button>Add Cart</button></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>DiscountedPrice</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of carts1">
+            <td>{{item.Name}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.Discount}}</td>
+            <td>{{item.DiscoutedPrice}}</td>
+            <td>{{item.Qty}}</td>
+            <td>{{item.Total}}</td>
         </tr>
     </tbody>
     <tfoot>
-        <tr>
-            <th>Total Price:{{getTotal()}}</th>
-        </tr>
+        {{setTotal()}}
+        <h3>TotalItems({{rowcount}})</h3>
+        <h3>GrandTotal={{gtotal}}</h3>
     </tfoot>
 </table>
+<button btn="btn btn-primary">Make Payment</button>
