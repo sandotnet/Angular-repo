@@ -1,3 +1,13 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>Enter Name</td>
+            <td>
+                <input type="text" name="" id="" [(ngModel)]="item.name">
+            </td>
+        </tr>
+    </table>
+</div>
 <div class="row" style="margin-bottom:15px;">
     <div class="col-md-3">
         <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files) " style="display:none;">
@@ -11,4 +21,8 @@
             {{message}}
         </span>
     </div>
+    <div class="col-md-5">
+        <button (click)="save()">Save</button>
+    </div>
+
 </div>

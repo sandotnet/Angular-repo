@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HandsOnAPIUsingImageUpload.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 
@@ -8,6 +9,11 @@ namespace HandsOnAPIUsingImageUpload.Controllers
     [ApiController]
     public class ImageUploadController : ControllerBase
     {
+        private readonly MyContext _context;
+        public ImageUploadController()
+        {
+            _context = new MyContext();
+        }
         [HttpPost, DisableRequestSizeLimit]
         public async Task<IActionResult> Upload()
         {
@@ -38,6 +44,19 @@ namespace HandsOnAPIUsingImageUpload.Controllers
                 return StatusCode(500, $"Internal server error: {ex}");
             }
         }
+        [HttpPost,Route("AddProduct")]
+        public IActionResult Add(Product product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+            return Ok();
+        }
+        [HttpGet,Route("GetProducts")]
+        public IActionResult GetAll()
+        {
+            return Ok(_context.Products.ToList());
+        }
+
     }
 }
 
