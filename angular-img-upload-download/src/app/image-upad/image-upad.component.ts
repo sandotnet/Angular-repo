@@ -27,7 +27,9 @@ export class ImageUpadComponent {
       return;
     }
     let fileToUpload = <File>files[0];
-    this.item.path = fileToUpload.name;
+    //set product image in localstorage
+    localStorage.setItem('product_img',fileToUpload.name);
+    //this.item.path = fileToUpload.name;
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
     this.http
@@ -49,12 +51,4 @@ export class ImageUpadComponent {
         error: (err: HttpErrorResponse) => console.log(err),
       });
   };
-  save() {
-    console.log(this.item);
-    this.http
-      .post('http://localhost:5106/api/ImageUpload/AddProduct', this.item)
-      .subscribe((res) => {
-        console.log(res);
-      });
-  }
 }
