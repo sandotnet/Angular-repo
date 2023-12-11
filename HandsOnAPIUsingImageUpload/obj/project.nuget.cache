@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "rHCbu5Rv88J+c5AGdHntP4hfVWe3QoNpguhj9M67BZFUGjfMmhuHUwjFnbjfYv8iYZ/2FvpQtQt5S2T0kg2+iw==",
+  "success": true,
+  "projectFilePath": "D:\\Training-Material\\Code-Bank\\DOTNET\\Rest-API\\HandsOn\\HandsOnAPIUsingImageUpload\\HandsOnAPIUsingImageUpload.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\santhosh\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\santhosh\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\santhosh\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\santhosh\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\santhosh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\santhosh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

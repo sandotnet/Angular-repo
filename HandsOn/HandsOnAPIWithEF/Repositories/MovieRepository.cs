@@ -19,9 +19,17 @@ namespace HandsOnAPIWithEF.Repositories
 
         public void Delete(int id)
         {
-           Movie movie=db.Movies.Find(id);
-            db.Movies.Remove(movie);
-            db.SaveChanges();
+            try
+            {
+                Movie movie = db.Movies.Find(id);
+                db.Movies.Remove(movie);
+                db.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
 
         public Movie Get(int id)

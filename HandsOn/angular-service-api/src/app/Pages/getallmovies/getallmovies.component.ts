@@ -28,9 +28,14 @@ export class GetallmoviesComponent {
     console.log(id);
     this.http
       .delete('http://localhost:64257/api/Movie/DeleteMovie/' + id)
-      .subscribe((response) => {
-        console.log(response);
-      });
+      .subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     this.getAllMovies(); //to load the table
     location.reload(); //to reload the page
   }
